@@ -8,7 +8,7 @@ HTTPClient http;
 char ssid[] = "YourSSID";
 char pass[] = "YourPassword";
 String Joke;
-const long TimeBetweenLaughs = 60 * 1000;// 12 * 60 * 60 * 1000;
+const long TimeBetweenLaughs = 12 * 60 * 60 * 1000;
 const long AlarmTimeOut = 10 * 1000;
 long TimeStamp = -1 * (TimeBetweenLaughs + AlarmTimeOut);
 const int AlertPin = 12;
@@ -84,7 +84,7 @@ void loop() {
     // Tell the joke
     PrintAndWait(u8g2_font_t0_11_mr, Joke, millis() + (5 * 1000), 0);
     // Controlled Breathing
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 90; i++) {
       PrintAndWait(u8g2_font_lubI24_tf, " Inhale", millis() + (5 * 1000), 30);
       PrintAndWait(u8g2_font_lubI24_tf, " Exhale", millis() + (5 * 1000), 30);
     }
